@@ -1,0 +1,73 @@
+﻿@model SilverProcessingApp.Models.ScrapSilverPurityCalculatorJobDetails
+
+@{
+    ViewData["Title"] = "EditPC";
+}
+
+<h1>Edit Purity Calculator</h1>
+
+@*<h4>Edit Purity Calculator</h4>*@
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditPC">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SilverCode" />
+            <div class="form-group">
+                <label asp-for="ProductNumber" class="control-label "></label>
+                <input asp-for="ProductNumber" class="form-control disabled" />
+                <span asp-validation-for="ProductNumber" class="text-danger disabled"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantityinGms" class="control-label"></label>
+                <input asp-for="QuantityinGms" class="form-control" />
+                <span asp-validation-for="QuantityinGms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PercentageTomakepure" class="control-label" ></label>
+                <input asp-for="PercentageTomakepure" class="form-control" disabled />
+                <span asp-validation-for="PercentageTomakepure" class="text-danger" ></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="PureSilver" class="control-label"></label>
+            <input asp-for="PureSilver" class="form-control" />
+            <span asp-validation-for="PureSilver" class="text-danger"></span>
+        </div>*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ExpectedfinalPurity" class="control-label"></label>
+                    <input asp-for="ExpectedfinalPurity" class="form-control" />
+                    <span asp-validation-for="ExpectedfinalPurity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Pido" class="control-label invisible"></label>
+                    <input asp-for="Pido" class="form-control invisible" />
+                    <span asp-validation-for="Pido" class="text-danger invisible"></span>
+                </div>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="FinalPurity" class="control-label"></label>
+            <input asp-for="FinalPurity" class="form-control" />
+            <span asp-validation-for="FinalPurity" class="text-danger"></span>
+        </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="FinalValue" class="control-label"></label>
+                <input asp-for="FinalValue" class="form-control" />
+                <span asp-validation-for="FinalValue" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

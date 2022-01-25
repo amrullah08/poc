@@ -1,0 +1,107 @@
+﻿@model SilverProcessingApp.Models.SilverArticles
+
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+
+<body style="background-image: url('https://images.unsplash.com/photo-1641594502226-55d38fd25b95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTc5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60'); background-color: #cccccc; height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+    <div class="container-fluid px-1 py-5 mx-auto text-light" style="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+
+                <h1>Silver Articles</h1>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="AddOrEdit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4 ">
+                                    <label asp-for="TypeofSilverArticle" class="control-label"></label>
+                                    <input asp-for="TypeofSilverArticle" class="form-control" />
+                                    <span asp-validation-for="TypeofSilverArticle" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label asp-for="DateofProcess" class="control-label"></label>
+                                    <input asp-for="DateofProcess" class="form-control" />
+                                    <span asp-validation-for="DateofProcess" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="Processby" class="control-label"></label>
+                                    <input asp-for="Processby" class="form-control" />
+                                    <span asp-validation-for="Processby" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="RawSilverQuantity" class="control-label"></label>
+                                    <input asp-for="RawSilverQuantity" class="form-control" />
+                                    <span asp-validation-for="RawSilverQuantity" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="NetWeight" class="control-label"></label>
+                                    <input asp-for="NetWeight" class="form-control" />
+                                    <span asp-validation-for="NetWeight" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SilverValue" class="control-label"></label>
+                                    <input asp-for="SilverValue" class="form-control" />
+                                    <span asp-validation-for="SilverValue" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label asp-for="MakingCharges" class="control-label"></label>
+                                    <input asp-for="MakingCharges" class="form-control" />
+                                    <span asp-validation-for="MakingCharges" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label asp-for="Wastage" class="control-label"></label>
+                                    <input asp-for="Wastage" class="form-control" />
+                                    <span asp-validation-for="Wastage" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="Total" class="control-label"></label>
+                                    <input asp-for="Total" class="form-control" />
+                                    <span asp-validation-for="Total" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="GST" class="control-label"></label>
+                                    <input asp-for="GST" class="form-control" />
+                                    <span asp-validation-for="GST" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="TotalAmount" class="control-label"></label>
+                                    <input asp-for="TotalAmount" class="form-control" />
+                                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <a asp-action="Index" class="btn btn-primary btn-block"><i class="fa fa-table"></i> Back to List</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

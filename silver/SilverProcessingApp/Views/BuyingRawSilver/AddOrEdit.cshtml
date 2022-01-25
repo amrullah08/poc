@@ -1,0 +1,107 @@
+﻿@model SilverProcessingApp.Models.BuyingRawSilver
+
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+
+
+<body style="background-image: url('https://media.istockphoto.com/photos/broken-glass-abstract-background-3d-rendering-illustration-picture-id1200747950?b=1&k=20&m=1200747950&s=170667a&w=0&h=Qp2xV9P4R4wLBDLDjsQseaZakeHypl52UxMUbDCwsR8='); background-color: #cccccc; height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+    <div class="container-fluid px-1 py-5 mx-auto text-light" style="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+
+
+                <h1>Buying RawSilver</h1>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="AddOrEdit" enctype="multipart/form-data">
+
+
+                            <input type="hidden" asp-for="SilverCode" />
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="Mass" class="control-label"></label>
+                                    <select asp-for="Mass" asp-items="Model.Units" class="form-control"></select>&nbsp;
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="RawSilverQuantity" class="control-label"></label>
+                                    <input asp-for="RawSilverQuantity" class="form-control" />
+                                    <span asp-validation-for="RawSilverQuantity" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="NoSilverUnits" class="control-label"></label>
+                                    <input asp-for="NoSilverUnits" class="form-control" />
+                                    <span asp-validation-for="NoSilverUnits" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="GramsPerUnit" class="control-label"></label>
+                                    <input asp-for="GramsPerUnit" class="form-control" />
+                                    <span asp-validation-for="GramsPerUnit" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SilverValue" class="control-label"></label>
+                                    <input asp-for="SilverValue" class="form-control" />
+                                    <span asp-validation-for="SilverValue" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="GST" class="control-label"></label>
+                                    <input asp-for="GST" class="form-control" />
+                                    <span asp-validation-for="GST" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-4">
+                                    <label asp-for="TotalAmount" class="control-label"></label>
+                                    <input asp-for="TotalAmount" class="form-control" />
+                                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SupplierName" class="control-label"></label>
+                                    <input asp-for="SupplierName" class="form-control" />
+                                    <span asp-validation-for="SupplierName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SupplierPhoneNo" class="control-label"></label>
+                                    <input asp-for="SupplierPhoneNo" class="form-control" />
+                                    <span asp-validation-for="SupplierPhoneNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label asp-for="DateofPurchase" class="control-label"></label>
+                                    <input asp-for="DateofPurchase" class="form-control" />
+                                    <span asp-validation-for="DateofPurchase" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label asp-for="ImageFile" class="control-label"></label>
+                                    <input asp-for="ImageFile" name="photos" multiple="multiple" accept="image*" />
+                                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <a asp-action="Index" class=" btn btn-primary btn-block"><i class="fa fa-table"></i> Back to List</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

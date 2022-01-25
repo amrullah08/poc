@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SilverProcessingApp.Models.SupplierDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>SupplierDetails</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierPhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityBuyed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountPayed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutstandingAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierPhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityBuyed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPayed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutstandingAmount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SupplierCode">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SupplierCode">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SupplierCode">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

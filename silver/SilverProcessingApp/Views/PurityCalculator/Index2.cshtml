@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SilverProcessingApp.Models.JoinAndViewModel>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1>Index2</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ProductNo)*@
+                ProductNo
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Description
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ExpectedfinalPurity)*@
+                ExpectedfinalPurity
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Dateofinput)*@
+                Dateofinput
+            </th>
+            <th>
+                FinalPurity
+            </th>
+            <th>
+                FinalValue
+            </th>
+            <th>
+                FromBuyer
+            </th>
+            <th>
+                ToEndUser
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ProductNo)*@
+                @item.PCon.ProductNo
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Description)*@
+                @item.PCon.Description
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ExpectedfinalPurity)*@
+                @item.PCon.ExpectedfinalPurity
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Dateofinput)*@
+                @item.PCon.Dateofinput
+            </td>
+            <td>
+                @item.PCal.FinalPurity
+            </td>
+            <td>
+                @item.PCal.FinalValue
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Dateofinput)*@
+                @item.PCon.FromBuyer
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Dateofinput)*@
+                @item.PCon.ToEndUser
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.Pid">Edit</a> |*@
+                <a asp-action="Index" asp-route-id="@item.PCon.Pid">Details</a>
+                @*<a href="/PurityCalculator/ExporDataToFile">Report </a>*@
+                @*<a asp-action="Index3" asp-route-id="@item.PCon.Pid">Report</a> ||*@
+                <a asp-action="Delete" asp-route-id="@item.PCon.Pid">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/PurityCalculator/dateforexcel">Export to Excel </a>
+

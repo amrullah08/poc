@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SilverProcessingApp.Models.BuyingRawSilver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>RawSilverList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RawSilverQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoSilverUnits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GramsPerUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SilverValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierPhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateofPurchase)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RawSilverQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoSilverUnits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GramsPerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SilverValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GST)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierPhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateofPurchase)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SilverCode">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SilverCode">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SilverCode">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

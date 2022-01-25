@@ -1,0 +1,64 @@
+﻿<body style="background-color:moccasin;">
+    <h3>Product Info</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+        <tr>
+            <td>Mass</td>
+            <td>@ViewBag.BuyingRawSilver.Mass</td>
+        </tr>
+        <tr>
+            <td>RawSilverQuantity</td>
+            <td>@ViewBag.BuyingRawSilver.RawSilverQuantity</td>
+        </tr>
+        <tr>
+            <td>NoSilverUnits</td>
+            <td>@ViewBag.BuyingRawSilver.NoSilverUnits</td>
+        </tr>
+        <tr>
+            <td>GramsPerUnit</td>
+            <td>@ViewBag.BuyingRawSilver.GramsPerUnit</td>
+        </tr>
+        <tr>
+            <td>SilverValue</td>
+            <td>@ViewBag.BuyingRawSilver.SilverValue</td>
+        </tr>
+        <tr>
+            <td>GST</td>
+            <td>@ViewBag.BuyingRawSilver.GST</td>
+        </tr>
+        <tr>
+            <td>TotalAmount</td>
+            <td>@ViewBag.BuyingRawSilver.TotalAmount</td>
+        </tr>
+        <tr>
+            <td>SupplierName</td>
+            <td>@ViewBag.BuyingRawSilver.SupplierName</td>
+        </tr>
+        <tr>
+            <td>SupplierPhoneNo</td>
+            <td>@ViewBag.BuyingRawSilver.SupplierPhoneNo</td>
+        </tr>
+        <tr>
+            <td>DateofPurchase</td>
+            <td>@ViewBag.BuyingRawSilver.DateofPurchase</td>
+        </tr>
+        <tr>
+            <td>PC Name</td>
+            <td>@ViewBag.BuyingRawSilver.PCNAME</td>
+        </tr>
+        <tr>
+            <td>IP Address</td>
+            <td>@ViewBag.BuyingRawSilver.IPADDRESS</td>
+        </tr>
+
+        <tr>
+            <td>Photo(s)</td>
+            <td>
+                @foreach (var photo in ViewBag.BuyingRawSilver.Photos)
+                {
+                    <img src="~/images/@photo" width="120" />
+                }
+            </td>
+        </tr>
+    </table>
+    </body>

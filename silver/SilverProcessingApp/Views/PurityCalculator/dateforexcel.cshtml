@@ -1,0 +1,24 @@
+﻿@model SilverProcessingApp.Models.dateforexcel
+
+<h1>Enter date to Generate excel on between dates</h1>
+<form asp-action="dateforexcel">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="FromDate" class="control-label"></label>
+            <input asp-for="FromDate" class="form-control" />
+            <span asp-validation-for="FromDate" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label asp-for="ToDate" class="control-label"></label>
+            <input asp-for="ToDate" class="form-control" />
+            <span asp-validation-for="ToDate" class="text-danger"></span>
+        </div>
+    </div>
+
+    @*<form method="post" asp-controller="PurityCalculator" asp-action="dateforexcel">*@
+
+        <input type="submit" value="Export to Excel" />
+    </form>

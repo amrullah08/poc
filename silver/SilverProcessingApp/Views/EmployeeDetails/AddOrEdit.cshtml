@@ -1,0 +1,51 @@
+﻿@model SilverProcessingApp.Models.EmployeeDetails
+
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+<body style="background-image: url('https://images.unsplash.com/photo-1574550399363-26037cf7d8f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60'); background-color: #cccccc; height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+    <div class="container-fluid px-1 py-5 mx-auto text-light" style="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h1>EmployeeDetails</h1>
+                <hr />
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <form asp-action="AddOrEdit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group col-md-12">
+                                <label asp-for="EmployeeName" class="control-label"></label>
+                                <input asp-for="EmployeeName" class="form-control" />
+                                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label asp-for="JobType" class="control-label"></label>
+                                <input asp-for="JobType" class="form-control" />
+                                <span asp-validation-for="JobType" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label asp-for="Salary" class="control-label"></label>
+                                <input asp-for="Salary" class="form-control" />
+                                <span asp-validation-for="Salary" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                            </div>
+
+                            <div class="form-group col-md-12" >
+                                <a asp-action="Index" class="btn btn-primary btn-block"><i class="fa fa-table"></i> Back to List</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@*<h1>AddOrEdit</h1>*@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

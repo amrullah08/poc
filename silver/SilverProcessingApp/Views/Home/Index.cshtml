@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
+
+        .row {
+            margin: 8px -16px;
+        }
+
+            /* Add padding BETWEEN each column */
+            .row,
+            .row > .column {
+                padding: 8px;
+            }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* Clear floats after rows */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @@media screen and (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @@media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MAIN (Center website) -->
+    <div class="main">
+
+        <h1>Silver Processing</h1>
+        <hr>
+
+        <h2>Mechanism</h2>
+        <p>The Process of Making Raw Silver to Articles</p>
+
+
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+            <div class="column">
+                <div class="content">
+                    <img src='@Url.Content("~/Images/istockphoto-494637036-1024x1024.jpg" )' alt="Mountains" style="width:100%">
+                    <h3>Silver Articles</h3>
+                    <p>Silver has long been valued as a precious metal. Silver metal is used in many bullion coins, sometimes alongside gold:[5] while it is more abundant than gold, it is much less abundant as a native metal.[6] Its purity is typically measured on a per-mille basis; a 94%-pure alloy is described as "0.940 fine". As one of the seven metals of antiquity, silver has had an enduring role in most human cultures. Silver metal is used in many bullion coins, sometimes alongside gold:[5] while it is more abundant than gold</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <img src='@Url.Content("~/Images/Silver-Bars.jpg")' alt="Lights" style="width:100%">
+                    <h3>Silver Bars</h3>
+                    <p>Silver is a chemical element with the symbol Ag (from the Latin argentum, derived from the Proto-Indo-European h₂erǵ: "shiny" or "white") and atomic number 47. A soft, white, lustrous transition metal, it exhibits the highest electrical conductivity, thermal conductivity, and reflectivity of any metal.[4] The metal is found in the Earth's crust in the pure, free elemental form ("native silver"), as an alloy with gold and other metals, and in minerals such as argentite and chlorargyrite lead, and zinc refining.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <img src='@Url.Content("~/Images/Gold_refinery_adf.jpg")' alt="Nature" style="width:100%">
+                    <h3>Other than Article</h3>
+                    <p>Other than in currency and as an investment medium (coins and bullion), silver is used in solar panels, water filtration, jewellery, ornaments, high-value tableware and utensils (hence the term "silverware"), in electrical contacts and conductors, in specialized mirrors, window coatings, in catalysis of chemical reactions, as a colorant in stained glass, and in specialized confectionery. Its compounds are used in photographic and X-(oligodynamic effect), added to bandages, wound-dressings, catheters, and other medical instruments.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <img src='@Url.Content("~/Images/download (1).jpg")' alt="Mountains" style="width:100%">
+                    <h3>Work</h3>
+                    <p>The major use of silver besides coinage throughout most of history was in the manufacture of jewellery and other general-use items, and this continues to be a major use today.The major use of silver besides coinage throughout most of history was in the manufacture of jewellery and other general-use items, and this continues to be a major use today</p>
+                </div>
+            </div>
+            <!-- END GRID -->
+        </div>
+
+        <div class="content">
+            <img src='@Url.Content("~/Images/download (1).jpg")' alt="Bear" style="width:100%">
+            <h3>Making into art</h3>
+            <p>Silver was one of the seven metals of antiquity that were known to prehistoric humans and whose discovery is thus lost to history.[54] In particular, the three metals of group 11, copper, silver, and gold, occur in the elemental form in nature and were probably used as the first primitive forms of money as opposed to simple bartering.[55] However, unlike copper, silver did not lead to the growth of metallurgy on account of its Since silver is more reactive than gold, supplies of native silver were much more limited than those of gold.</p>
+            @*<p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>*@
+        </div>
+
+        <!-- END MAIN -->
+    </div>
+
+</body>
+</html>

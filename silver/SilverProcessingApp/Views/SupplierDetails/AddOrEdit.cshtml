@@ -1,0 +1,76 @@
+﻿@model SilverProcessingApp.Models.SupplierDetails
+
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+
+<body style="background-image: url('https://images.unsplash.com/photo-1641895949711-4269f58f2b5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MzF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60'); background-color: #cccccc; height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+    <div class="container-fluid px-1 py-5 mx-auto text-light" style="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+
+                <h1>Supplier Details</h1>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="AddOrEdit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SupplierName" class="control-label"></label>
+                                    <input asp-for="SupplierName" class="form-control" />
+                                    <span asp-validation-for="SupplierName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="SupplierPhoneNo" class="control-label"></label>
+                                    <input asp-for="SupplierPhoneNo" class="form-control" />
+                                    <span asp-validation-for="SupplierPhoneNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="QuantityBuyed" class="control-label"></label>
+                                    <input asp-for="QuantityBuyed" class="form-control" />
+                                    <span asp-validation-for="QuantityBuyed" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="TotalAmount" class="control-label"></label>
+                                    <input asp-for="TotalAmount" class="form-control" />
+                                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="AmountPayed" class="control-label"></label>
+                                    <input asp-for="AmountPayed" class="form-control" />
+                                    <span asp-validation-for="AmountPayed" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label asp-for="OutstandingAmount" class="control-label"></label>
+                                    <input asp-for="OutstandingAmount" class="form-control" />
+                                    <span asp-validation-for="OutstandingAmount" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <a asp-action="Index" class="btn btn-primary btn-block"><i class="fa fa-table"></i> Back to List</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

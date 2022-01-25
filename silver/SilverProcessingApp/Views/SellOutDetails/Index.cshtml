@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SilverProcessingApp.Models.SellOutDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>SellOutDetails</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BillNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soldby)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Selloutdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Selloutvalue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soldby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerPhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Selloutdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Selloutvalue)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SelloutId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SelloutId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SelloutId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
