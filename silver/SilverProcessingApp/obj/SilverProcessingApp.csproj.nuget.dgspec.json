@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Devops\\BehaviouralAssessment\\src\\poc2\\SilverProcessingApp\\SilverProcessingApp.csproj": {}
+    "C:\\Users\\Mahesh\\Documents\\GitHub\\poc\\silver\\SilverProcessingApp\\SilverProcessingApp.csproj": {}
   },
   "projects": {
-    "F:\\Devops\\BehaviouralAssessment\\src\\poc2\\SilverProcessingApp\\SilverProcessingApp.csproj": {
+    "C:\\Users\\Mahesh\\Documents\\GitHub\\poc\\silver\\SilverProcessingApp\\SilverProcessingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Devops\\BehaviouralAssessment\\src\\poc2\\SilverProcessingApp\\SilverProcessingApp.csproj",
+        "projectUniqueName": "C:\\Users\\Mahesh\\Documents\\GitHub\\poc\\silver\\SilverProcessingApp\\SilverProcessingApp.csproj",
         "projectName": "SilverProcessingApp",
-        "projectPath": "F:\\Devops\\BehaviouralAssessment\\src\\poc2\\SilverProcessingApp\\SilverProcessingApp.csproj",
+        "projectPath": "C:\\Users\\Mahesh\\Documents\\GitHub\\poc\\silver\\SilverProcessingApp\\SilverProcessingApp.csproj",
         "packagesPath": "C:\\Users\\Mahesh\\.nuget\\packages\\",
-        "outputPath": "F:\\Devops\\BehaviouralAssessment\\src\\poc2\\SilverProcessingApp\\obj\\",
+        "outputPath": "C:\\Users\\Mahesh\\Documents\\GitHub\\poc\\silver\\SilverProcessingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mahesh\\AppData\\Roaming\\NuGet\\NuGet.Config",

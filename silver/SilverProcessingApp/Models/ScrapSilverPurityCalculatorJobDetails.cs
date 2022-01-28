@@ -15,6 +15,7 @@ namespace SilverProcessingApp.Models
         public int SilverCode { get; set; }
 
 		[Column(TypeName = "int")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Product Number")]
 		public int ProductNumber { get; set; }
 
@@ -29,12 +30,12 @@ namespace SilverProcessingApp.Models
 		public double PercentageTomakepure { get; set; }
 
 		[Column(TypeName = "numeric(10,2)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Pure Silver Quantity")]
 		public double PureSilver { get; set; }
 
 		[Column(TypeName = "numeric(10,2)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Enter the expected Final Purity.")]
 		public double ExpectedfinalPurity { get; set; }
 
@@ -60,7 +61,7 @@ namespace SilverProcessingApp.Models
 
 
 		[Column(TypeName = "varchar(100)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Description")]
 		public string Description { get; set; }
 

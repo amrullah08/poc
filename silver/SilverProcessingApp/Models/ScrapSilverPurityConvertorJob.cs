@@ -14,6 +14,7 @@ namespace SilverProcessingApp.Models
 		public int Pid { get; set; }
 
 		[Column(TypeName = "int")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Product Number")]
 		public int ProductNo { get; set; }
 
@@ -23,17 +24,17 @@ namespace SilverProcessingApp.Models
 		public string Description { get; set; }
 
 		[Column(TypeName = "numeric(10,2)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("Enter the expected Final Purity.")]
 		public double ExpectedfinalPurity { get; set; }
 
 		[Column(TypeName = "varchar(100)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("From-Buyer")]
 		public string FromBuyer { get; set; }
 
 		[Column(TypeName = "varchar(100)")]
-		//[Required(ErrorMessage = "This field is required.")]
+		[Required(ErrorMessage = "This field is required.")]
 		[DisplayName("To-EndUser")]
 		public string ToEndUser { get; set; }
 
