@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using SilverProcessingApp.Areas.Identity.Data;
 using SilverProcessingApp.Data;
 using SilverProcessingApp.Models;
+using SilverProcessingApp.Repository.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace SilverProcessingApp
             services.AddRazorPages();
             services.AddMvc();
 
+            services.AddScoped<SilverProcessingDbContext, SilverProcessingDbContext>();
 
             services.AddDbContext<SilverContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));

@@ -1,0 +1,49 @@
+﻿@model SilverProcessingApp.Repository.Models.AspNetUserClaims
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body style="background-image: url('https://images.unsplash.com/photo-1512386233331-f023884a92e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHBsYWluJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60'); background-color: #cccccc; height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; ">
+    <div class="container-fluid px-1 py-5 mx-auto " style="">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h1>AspNet User Claims</h1>
+                <hr />
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="UserId" class="control-label"></label>
+                                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ClaimType" class="control-label"></label>
+                                <input asp-for="ClaimType" class="form-control" />
+                                <span asp-validation-for="ClaimType" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ClaimValue" class="control-label"></label>
+                                <input asp-for="ClaimValue" class="form-control" />
+                                <span asp-validation-for="ClaimValue" class="text-danger"></span>
+                            </div>
+                            <div class="form-group ">
+                                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                            </div>
+                            <div class="form-group ">
+                                <a asp-action="Index" class="btn btn-primary btn-block">Back to List</a>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
