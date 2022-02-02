@@ -20,6 +20,7 @@ using System.Security.Claims;
 using SilverProcessingApp.Data;
 using SilverProcessingApp.Areas.Identity.Data;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SilverProcessingApp.Controllers
 {
@@ -36,7 +37,7 @@ namespace SilverProcessingApp.Controllers
             _UserManager = UserManager;
         }
 
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index(int id)
         {
             //if (id == 0)
@@ -45,6 +46,7 @@ namespace SilverProcessingApp.Controllers
             return View(await _context.ScrapSilverPurityCalculatorJobDetails.Where(i => i.Pido == id).ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index2()
         {
             List<ScrapSilverPurityCalculatorJobDetails> ScrapSilverPurityCalculatorJobDetails = new List<ScrapSilverPurityCalculatorJobDetails>();
@@ -126,7 +128,7 @@ namespace SilverProcessingApp.Controllers
         //    return View("Update");
         //}
 
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ScrapSilverPurityConvertorJob viewModel = new ScrapSilverPurityConvertorJob();
@@ -143,6 +145,7 @@ namespace SilverProcessingApp.Controllers
         }
 
         //----------------------------------------------------
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ScrapSilverPurityConvertorJob PurityConvertor, ScrapSilverPurityCalculatorJobDetails ScrapSilverPurityCalculatorJobDetails)

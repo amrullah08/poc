@@ -16,6 +16,11 @@ namespace SilverProcessingApp.Repository.Models
         [Key]
         public string RoleId { get; set; }
 
+        [NotMapped]
+        public string RoleName { get; set; }
+        [NotMapped]
+        public string UserName { get; set; }
+
         [ForeignKey(nameof(RoleId))]
         [InverseProperty(nameof(AspNetRoles.AspNetUserRoles))]
         public virtual AspNetRoles Role { get; set; }

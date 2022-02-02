@@ -48,8 +48,11 @@ namespace SilverProcessingApp.Controllers
         // GET: AspNetUserRoles/Create
         public IActionResult Create()
         {
-            ViewData["RoleId"] = new SelectList(_context.AspNetRoles, "Id", "Id");
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            //ViewData["RoleId"] = new SelectList(_context.AspNetRoles, "Id", "Id");
+            //ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+
+            ViewData["RoleName"] = new SelectList(_context.AspNetRoles, "Name", "Name");
+            ViewData["UserName"] = new SelectList(_context.AspNetUsers, "UserName", "UserName");
             return View();
         }
 
@@ -58,11 +61,31 @@ namespace SilverProcessingApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,RoleId")] AspNetUserRoles aspNetUserRoles)
+        public async Task<IActionResult> Create([Bind("UserId,RoleId,RoleName,UserName")] AspNetUserRoles aspNetUserRoles)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(aspNetUserRoles);
+                string Rolname = aspNetUserRoles.RoleName;
+                string Username = aspNetUserRoles.UserName;
+
+                var Rolid = _context.AspNetRoles
+                .Where(u => u.Name == Rolname)
+                .Select(u => u.Id)
+                .SingleOrDefault();
+
+
+                var userid = _context.AspNetUsers
+                .Where(u => u.UserName == Username)
+                .Select(u => u.Id)
+                .SingleOrDefault();
+
+                var RSid = new AspNetUserRoles()
+                {
+                    UserId = userid,
+                    RoleId = Rolid
+
+                };
+                _context.Add(RSid);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
